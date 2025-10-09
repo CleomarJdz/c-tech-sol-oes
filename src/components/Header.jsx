@@ -1,39 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
 
+import Logo from "../assets/c-tech-logo.svg";
+
 export default function Header({ carrinho }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <header
       style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        height: 64,
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "15px 40px",
-        backgroundColor: "#212121",
+        padding: "0 24px",
+        backgroundColor: "#0f1724",
         color: "#fff",
+        zIndex: 40,
       }}
     >
-      <nav style={{ display: "flex", gap: "20px" }}>
-        <Link to="/" style={linkStyle}>
-          Início
+      <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
+        <Link to="/" style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <img src={Logo} alt="C-Tech" style={{ height: 40 }} />
         </Link>
         <Link to="/produtos" style={linkStyle}>
           Produtos
         </Link>
-      </nav>
+      </div>
 
-      <nav style={{ display: "flex", gap: "20px", alignItems: "center" }}>
-        <Link to="/conta" style={linkStyle}>
-          Conta
-        </Link>
+      <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+        <button onClick={() => setOpen(true)} style={{ ...linkButtonStyle }}>Conta</button>
+
         <Link to="/carrinho" style={linkStyle}>
-          <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-            <ShoppingCart size={20} />
-            <span>{carrinho.length}</span>
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <ShoppingCart size={18} />
+            <span style={{ fontWeight: 700 }}>{carrinho.length}</span>
           </div>
         </Link>
-      </nav>
+      </div>
+
+      {open && (
+        <div style={modalOverlayStyle} onClick={() => setOpen(false)}>
+          <div style={modalStyle} onClick={(e) => e.stopPropagation()}>
+            <h3>Entrar ou Registrar</h3>
+            <p style={{ color: "#555" }}>Você pode entrar ou criar uma conta rapidamente.</p>
+            <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
+              <Link to="/conta" onClick={() => setOpen(false)} style={buttonLinkStyle}>Ir para Conta</Link>
+              <button onClick={() => setOpen(false)} style={{ ...btn, background: "#e5e7eb" }}>Fechar</button>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
@@ -41,6 +63,46 @@ export default function Header({ carrinho }) {
 const linkStyle = {
   color: "#fff",
   textDecoration: "none",
-  fontWeight: "bold",
-  fontSize: "16px",
+  fontWeight: "600",
+};
+
+const linkButtonStyle = {
+  background: "transparent",
+  color: "#fff",
+  border: "none",
+  cursor: "pointer",
+  fontWeight: 600,
+};
+
+const modalOverlayStyle = {
+  position: "fixed",
+  inset: 0,
+  background: "rgba(0,0,0,0.45)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  zIndex: 100,
+};
+
+const modalStyle = {
+  background: "#fff",
+  padding: 20,
+  borderRadius: 8,
+  width: 360,
+  boxShadow: "0 8px 24px rgba(2,6,23,0.4)",
+};
+
+const buttonLinkStyle = {
+  padding: "8px 12px",
+  background: "#ff6f00",
+  color: "#fff",
+  textDecoration: "none",
+  borderRadius: 6,
+  fontWeight: 700,
+};
+
+const btn = {
+  padding: "8px 12px",
+  borderRadius: 6,
+  border: "none",
 };

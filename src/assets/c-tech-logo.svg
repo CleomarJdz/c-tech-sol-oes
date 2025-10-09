@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="64" viewBox="0 0 320 64" fill="none">
+  <rect width="320" height="64" rx="12" fill="#0f1724" />
+  <g transform="translate(12,8)">
+    <rect x="0" y="0" width="48" height="48" rx="8" fill="#ff6f00" />
+    <path d="M14 12 L34 12 L24 36 Z" fill="#0f1724" opacity="0.95" />
+    <text x="70" y="32" font-family="Verdana, Geneva, Tahoma, sans-serif" font-size="20" fill="white" font-weight="700">C-Tech</text>
+    <text x="140" y="32" font-family="Verdana, Geneva, Tahoma, sans-serif" font-size="10" fill="#9ca3af">soluções em tecnologia</text>
+  </g>
+</svg>
