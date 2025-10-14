@@ -7,7 +7,7 @@ export default function Home() {
 			style={{
 				padding: "40px",
 				minHeight: "100vh",
-				background: "#fafafa",
+				background: "var(--ice-white)",
 				textAlign: "center",
 				display: "flex",
 				flexDirection: "column",
@@ -16,7 +16,7 @@ export default function Home() {
 				gap: "16px",
 			}}
 		>
-			<h1 style={{ color: "#ff6f00", margin: 0 }}>Bem-vindo à C-Tech Soluções</h1>
+			<h1 style={{ color: "var(--ctech-blue)", margin: 0 }}>Bem-vindo à C-Tech Soluções</h1>
 			<p style={{ maxWidth: 680 }}>
 				Loja demo com produtos de informática. Use a navegação no topo para ver os
 				produtos, sua conta ou o carrinho.
@@ -26,7 +26,7 @@ export default function Home() {
 				<Link
 					to="/produtos"
 					style={{
-						background: "#ff6f00",
+						background: "var(--ctech-blue)",
 						color: "#fff",
 						padding: "10px 16px",
 						borderRadius: 8,
@@ -40,8 +40,8 @@ export default function Home() {
 				<Link
 					to="/conta"
 					style={{
-						background: "#e0e0e0",
-						color: "#111",
+						background: "var(--card-bg)",
+						color: "var(--text-dark)",
 						padding: "10px 16px",
 						borderRadius: 8,
 						textDecoration: "none",
