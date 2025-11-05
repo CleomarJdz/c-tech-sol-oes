@@ -18,8 +18,7 @@ export default function Home() {
 		>
 			<h1 style={{ color: "var(--ctech-blue)", margin: 0 }}>Bem-vindo à C-Tech Soluções</h1>
 			<p style={{ maxWidth: 680 }}>
-				Loja demo com produtos de informática. Use a navegação no topo para ver os
-				produtos, sua conta ou o carrinho.
+				Sua loja online de tecnologia, oferecendo os melhores produtos com qualidade e preços competitivos. Explore nossa seleção de gadgets, acessórios e muito mais para atender todas as suas necessidades tecnológicas.
 			</p>
 
 			<div style={{ display: "flex", gap: "12px" }}>

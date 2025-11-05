@@ -1,12 +1,13 @@
 :root {
-  /* palette: ice white + blues */
-  --ctech-blue: #0f63ff; /* primary blue */
+  --ctech-blue: #0f63ff; 
   --ctech-blue-700: #0b4fd6;
-  --ice-white: #f4fbff; /* very light icy white */
-  --ice-bg: #eef8ff; /* card / image background */
-  --card-bg: #ffffff; /* card background */
+  --ice-white: #f4fbff; 
+  --ice-bg: #eef8ff; 
+  --card-bg: #ffffff;
   --card-border: rgba(15,99,255,0.08);
-  --text-dark: #0b2b47;
+  --text-dark: #205f96;
+  --button-bg: #eaf6ff;
+  --button-bg-hover: #d6f0ff;
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -22,7 +23,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* links and interactive */
+
 a {
   font-weight: 500;
   color: var(--ctech-blue);
@@ -53,15 +54,15 @@ button {
   font-size: 1em;
   font-weight: 600;
   font-family: inherit;
-  background-color: var(--ctech-blue);
-  color: white;
+  background-color: var(--button-bg);
+  color: var(--ctech-blue-700);
   cursor: pointer;
   transition: transform 120ms, box-shadow 120ms, background-color 180ms;
 }
 button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(15,99,255,0.12);
-  background-color: var(--ctech-blue-700);
+  box-shadow: 0 6px 18px rgba(11,79,214,0.08);
+  background-color: var(--button-bg-hover);
 }
 button:focus,
 button:focus-visible {
@@ -78,15 +79,14 @@ button:focus-visible {
     color: var(--ctech-blue-700);
   }
   button {
-    background-color: var(--ctech-blue);
+    background-color: var(--button-bg);
   }
 }
 
-/* root container used by React */
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   width: 100%;
 }
 
-/* rest of file preserved */

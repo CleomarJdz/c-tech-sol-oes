@@ -19,7 +19,7 @@ export default function Header({ carrinho }) {
         justifyContent: "space-between",
         alignItems: "center",
         padding: "0 24px",
-        backgroundColor: "#0f1724",
+        backgroundColor: "var(--ctech-blue-700)",
         color: "#fff",
         zIndex: 40,
       }}
@@ -34,10 +34,10 @@ export default function Header({ carrinho }) {
       </div>
 
       <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
-        <button onClick={() => setOpen(true)} style={{ ...linkButtonStyle }}>Conta</button>
+  <button onClick={() => setOpen(true)} style={{ ...linkButtonStyle }}>Conta</button>
 
         <Link to="/carrinho" style={linkStyle}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <ShoppingCart size={18} />
             <span style={{ fontWeight: 700 }}>{carrinho.length}</span>
           </div>
@@ -45,13 +45,13 @@ export default function Header({ carrinho }) {
       </div>
 
       {open && (
-        <div style={modalOverlayStyle} onClick={() => setOpen(false)}>
-          <div style={modalStyle} onClick={(e) => e.stopPropagation()}>
+          <div style={modalOverlayStyle} onClick={() => setOpen(false)}>
+          <div style={{ ...modalStyle, background: 'var(--card-bg)' }} onClick={(e) => e.stopPropagation()}>
             <h3>Entrar ou Registrar</h3>
-            <p style={{ color: "#555" }}>Você pode entrar ou criar uma conta rapidamente.</p>
+            <p style={{ color: "var(--text-dark)" }}>Você pode entrar ou criar uma conta rapidamente.</p>
             <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
               <Link to="/conta" onClick={() => setOpen(false)} style={buttonLinkStyle}>Ir para Conta</Link>
-              <button onClick={() => setOpen(false)} style={{ ...btn, background: "#e5e7eb" }}>Fechar</button>
+              <button onClick={() => setOpen(false)} style={{ ...btn, background: "var(--ice-bg)" }}>Fechar</button>
             </div>
           </div>
         </div>
@@ -85,7 +85,6 @@ const modalOverlayStyle = {
 };
 
 const modalStyle = {
-  background: "#fff",
   padding: 20,
   borderRadius: 8,
   width: 360,
@@ -94,7 +93,7 @@ const modalStyle = {
 
 const buttonLinkStyle = {
   padding: "8px 12px",
-  background: "#ff6f00",
+  background: "var(--ctech-blue)",
   color: "#fff",
   textDecoration: "none",
   borderRadius: 6,
